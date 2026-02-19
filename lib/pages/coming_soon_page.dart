@@ -41,7 +41,7 @@ class ComingSoonPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              "We are working  $title  this feature. \n It will be added soon!",
+              "We are working $title feature. \n It will be added soon!",
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 16, color: Colors.white70),
             ),

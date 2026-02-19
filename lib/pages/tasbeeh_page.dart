@@ -25,10 +25,10 @@ class _TasbeehPageState extends State<TasbeehPage> {
 
   // যিকিরের লিস্ট
   final List<ZikrModel> _zikrList = [
-    ZikrModel('سُبْحَانَ اللَّهِ', 'সুবহানাল্লাহ', 'আল্লাহ', 33),
-    ZikrModel('ٱلْحَمْدُ لِلَّهِ', 'আলহামদুলিল্লাহ', 'আল্লাহ', 33),
-    ZikrModel('اللَّهُ أَكْبَرُ', 'আল্লাহু আকবার', 'আল্লাহ', 100),
-    ZikrModel('لَا إِلَٰهَ إِلَّا اللَّهُ', 'লা ইলাহা ইল্লাল্লাহ', 'আল্লাহ', 100),
+    ZikrModel('سُبْحَانَ اللَّهِ', 'SubhanAllah', 'Glory be to Allah', 33),
+    ZikrModel('ٱلْحَمْدُ لِلَّهِ', 'Alhamdulillah', 'All praise is due to Allah', 33),
+    ZikrModel('اللَّهُ أَكْبَرُ', 'Allahu Akbar', 'Allah is the Greatest', 100),
+    ZikrModel('لَا إِلَٰهَ إِلَّا اللَّهُ', 'La ilaha illallah', 'There is deity worthy of worship except Allah', 100),
   ];
 
   late ZikrModel _selectedZikr;

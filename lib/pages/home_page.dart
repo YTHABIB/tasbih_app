@@ -100,8 +100,8 @@ class _HomePageState extends State<HomePage> {
               }),
 
               // Quran -> Coming Soon পেজে যাবে
-              _buildCategoryItem(Icons.menu_book, "Quran", () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => const ComingSoonPage(title: "Holy Quran")));
+              _buildCategoryItem(Icons.menu_book, "Al-Quran", () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => const ComingSoonPage(title: "Al-Quran")));
               }),
             ],
           ),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // --- বটম নেভিগেশনের জন্য Coming Soon উইজেট ---
+  // --- বটম নেভিগেশনের জন্য  ---
   Widget _buildComingSoonTab() {
     final tabNames = ["Home", "Calendar", "Schedule", "Settings"];
 
@@ -274,7 +274,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF6C63FF), // Active tab
+                      color: const Color(0xFF6C63FF),
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: const Center(child: Text("Today", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
@@ -293,8 +293,8 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _buildPrayerItem("Fajr", "5:30 AM"),
-              _buildPrayerItem("Dhuhr", "1:00 PM", isNext: true), // Example of highlighting next prayer
-              _buildPrayerItem("Asr", "3:30 PM"),
+              _buildPrayerItem("Dhuhr", "1:00 PM"),
+              _buildPrayerItem("Asr", "3:30 PM", isNext: true),
               _buildPrayerItem("Maghrib", "6:15 PM"),
               _buildPrayerItem("Isha", "7:45 PM"),
             ],

@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Tasbeeh & Prayer App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // হোম পেজের স্ক্রিনশট অনুযায়ী পার্পল থিম
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6C63FF)),
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
