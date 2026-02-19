@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// --- যিকিরের মডেল ---
+// --- Zikir Model ---
 class ZikrModel {
   final String arabic;
   final String pronunciation;
@@ -22,8 +22,6 @@ class _TasbeehPageState extends State<TasbeehPage> {
   int _counter = 0;
   int _lap = 0;
 
-
-  // যিকিরের লিস্ট
   final List<ZikrModel> _zikrList = [
     ZikrModel('سُبْحَانَ اللَّهِ', 'SubhanAllah', 'Glory be to Allah', 33),
     ZikrModel('ٱلْحَمْدُ لِلَّهِ', 'Alhamdulillah', 'All praise is due to Allah', 33),
@@ -38,7 +36,6 @@ class _TasbeehPageState extends State<TasbeehPage> {
     super.initState();
     _selectedZikr = _zikrList[0];
   }
-
   // --- Functions ---
   void _incrementCounter() {
     setState(() {
@@ -66,7 +63,7 @@ class _TasbeehPageState extends State<TasbeehPage> {
     }
   }
 
-  // --- Bottom Sheet Function ---
+  // --- Select Your Zikir ---
   void _showZikrSelectionSheet() {
     showModalBottomSheet(
       context: context,
@@ -82,7 +79,6 @@ class _TasbeehPageState extends State<TasbeehPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Title & Custom Button
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -93,7 +89,6 @@ class _TasbeehPageState extends State<TasbeehPage> {
                     ],
                   ),
                   const Divider(color: Colors.white24),
-
                   // Zikir List
                   Expanded(
                     child: ListView.builder(
@@ -138,11 +133,8 @@ class _TasbeehPageState extends State<TasbeehPage> {
       ),
       body: Column(
         children: [
-          // 1. Top Card
           _buildTopCard(),
-
           const Spacer(),
-          // 2. Big Ripple Tap Button
           GestureDetector(
             onTap: _incrementCounter,
             child: _buildRippleButton(),
@@ -152,7 +144,6 @@ class _TasbeehPageState extends State<TasbeehPage> {
       ),
     );
   }
-
   // --- Widgets (Reusable Components) --- //
 
   Widget _buildTopCard() {
@@ -201,7 +192,6 @@ class _TasbeehPageState extends State<TasbeehPage> {
               ),
             ),
           ),
-
           const SizedBox(height: 30),
 
           // Bottom Controls (Reset, Undo, Save)
@@ -263,7 +253,6 @@ class _TasbeehPageState extends State<TasbeehPage> {
       ),
     );
   }
-
   // --- Helper Components ---
 
   Widget _buildSmallChip(IconData icon, String label) {

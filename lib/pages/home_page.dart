@@ -15,9 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF151821), // Dark Theme Background
-
-      // --- AppBar ---
+      backgroundColor: const Color(0xFF151821),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -39,7 +37,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
 
-      // মূল পরিবর্তনটি এখানে করা হয়েছে (ডাইনামিক বডি)
       body: _selectedIndex == 0 ? _buildHomeContent() : _buildComingSoonTab(),
 
       // --- Bottom Navigation Bar ---
@@ -49,7 +46,7 @@ class _HomePageState extends State<HomePage> {
           highlightColor: Colors.transparent,
         ),
         child: BottomNavigationBar(
-          backgroundColor: const Color(0xFF1E222D), // Dark Bottom Bar
+          backgroundColor: const Color(0xFF1E222D),
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           selectedItemColor: const Color(0xFF6C63FF),
@@ -68,7 +65,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // --- হোম পেজের মেইন কনটেন্ট ---
+  // --- Home Page Content's --- //
   Widget _buildHomeContent() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
@@ -80,26 +77,22 @@ class _HomePageState extends State<HomePage> {
           const Center(child: Text("Category", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white))),
           const SizedBox(height: 15),
 
-          // --- ক্যাটাগরি বাটনগুলোর নেভিগেশন আপডেট ---
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Prayer Time -> Coming Soon পেজে যাবে
+              // Prayer Time
               _buildCategoryItem(Icons.handshake_outlined, "Prayer Time", () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => const ComingSoonPage(title: "Prayer Time")));
               }),
-
-              // Tasbih -> ঠিকমতো তাসবিহ পেজে যাবে
+              // Tasbih
               _buildCategoryItem(Icons.donut_large, "Tasbih", () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => const TasbeehPage()));
               }),
-
-              // Dua -> Coming Soon পেজে যাবে
+              // Dua
               _buildCategoryItem(Icons.volunteer_activism, "Dua", () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => const ComingSoonPage(title: "Dua Collection")));
               }),
-
-              // Quran -> Coming Soon পেজে যাবে
+              // Quran
               _buildCategoryItem(Icons.menu_book, "Al-Quran", () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => const ComingSoonPage(title: "Al-Quran")));
               }),
@@ -114,10 +107,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // --- বটম নেভিগেশনের জন্য  ---
   Widget _buildComingSoonTab() {
     final tabNames = ["Home", "Calendar", "Schedule", "Settings"];
-
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -135,29 +126,25 @@ class _HomePageState extends State<HomePage> {
   }
 
   // --- Widgets ---
-
   Widget _buildRamadanBanner() {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E222D), // Dark Card Background
+        color: const Color(0xFF1E222D),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white10), // Subtle border
+        border: Border.all(color: Colors.white10),
       ),
       child: Column(
         children: [
-          const Text(
-            "Today",
+          const Text("Today",
             style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 5),
-          const Text(
-            "7th Ramadan 1447",
+          const Text("7th Ramadan 1447",
             style: TextStyle(color: const Color(0xFF6C63FF), fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          const Text(
-            "February 26, 2026",
+          const Text("February 26, 2026",
             style: TextStyle(color: Colors.white70, fontSize: 14),
           ),
           const SizedBox(height: 15),
@@ -177,7 +164,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       decoration: BoxDecoration(
-        color: const Color(0xFF151821), // Inner dark background
+        color: const Color(0xFF151821),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white10),
       ),
@@ -232,7 +219,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(context, MaterialPageRoute(builder: (_) => const TasbeehPage()));
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF6C63FF), // Purple accent button
+              backgroundColor: const Color(0xFF6C63FF),
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -265,7 +252,7 @@ class _HomePageState extends State<HomePage> {
           Container(
             padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
-              color: const Color(0xFF151821), // Inner dark background
+              color: const Color(0xFF151821),
               borderRadius: BorderRadius.circular(30),
             ),
             child: Row(
@@ -286,7 +273,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-
           const SizedBox(height: 20),
           // Prayer List
           Row(
